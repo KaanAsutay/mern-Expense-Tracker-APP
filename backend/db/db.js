@@ -1,13 +1,16 @@
-const mongoose = require('mongoose');
+"use strict"
 
-const db = async () => {
-    try {
-        mongoose.set('strictQuery', false)
-        await mongoose.connect(process.env.MONGO_URL)
-        console.log('Db Connected')
-    } catch (error) {
-        console.log('DB Connection Error');
-    }
+const mongoose = require('mongoose')
+
+const db = function () {
+    // Connect:
+    mongoose.connect(process.env.MONGO_URL)
+        .then(() => console.log('* DB Connected * '))
+        .catch((err) => console.log('* DB Not Connected * ', err))
 }
 
-module.exports = {db}
+/* ------------------------------------------------------- */
+module.exports = {
+    mongoose,
+    db
+} 
