@@ -1,4 +1,8 @@
-const { model } = require('mongoose')
+"use strict"
+/* -------------------------------------------------------
+    EXPENSE TRACKER APP
+------------------------------------------------------- */
+// const { model } = require('mongoose')
 
 const router = require('express').Router()
 
