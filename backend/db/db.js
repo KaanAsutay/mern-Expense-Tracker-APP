@@ -1,5 +1,7 @@
 "use strict"
-
+/* -------------------------------------------------------
+    EXPENSE TRACKER APP
+------------------------------------------------------- */
 const mongoose = require('mongoose')
 
 const db = function () {

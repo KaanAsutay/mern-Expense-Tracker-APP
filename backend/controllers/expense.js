@@ -1,3 +1,7 @@
+"use strict"
+/* -------------------------------------------------------
+    EXPENSE TRACKER APP
+------------------------------------------------------- */
 const ExpenseSchema = require("../models/ExpenseModel")
 
 

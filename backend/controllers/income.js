@@ -2,7 +2,7 @@
 /* -------------------------------------------------------
     EXPENSE TRACKER APP
 ------------------------------------------------------- */
-const IncomeSchema = require("../models/incomeModel")
+const IncomeSchema = require("../models/IncomeModel")
 
 exports.addIncome = async (req, res) => {
     const {
