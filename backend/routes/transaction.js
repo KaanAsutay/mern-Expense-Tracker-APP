@@ -2,9 +2,10 @@
 /* -------------------------------------------------------
     EXPENSE TRACKER APP
 ------------------------------------------------------- */
-// const { model } = require('mongoose')
+const { addIncome } = require('../controllers/income.js')
 
 const router = require('express').Router()
+
 
 router.post('/add-income', addIncome)
 
