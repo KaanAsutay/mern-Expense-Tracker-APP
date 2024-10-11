@@ -7,7 +7,7 @@ function App() {
   return (
     <AppStyled bg={bg} className='App'>
       <MainLayout>
-        <h1></h1>
+        
       </MainLayout>
     </AppStyled>
   )
