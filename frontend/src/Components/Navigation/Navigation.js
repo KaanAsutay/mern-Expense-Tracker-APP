@@ -4,7 +4,8 @@ import avatar from '../../img/avatar.png'
 import { menuItems } from '../../utils/menuItems'
 import { signout } from '../../utils/Icons'
 
-function Navigation() {
+function Navigation({active, setActive}) {
+
   return (
     <NavStyled>
 
@@ -18,7 +19,11 @@ function Navigation() {
 
         <ul className='menu-items'>
             {menuItems.map((item) => {
-                return <li key={item.id}>
+                return <li 
+                key={item.id}
+                onClick={() => setActive(item.id)}
+                className={active === item.id ? 'active' : ''}
+                >
                     {item.icon}
                     <span>{item.title}</span>
                 </li>
@@ -70,7 +75,7 @@ const NavStyled = styled.nav`
         p{
             color: rgba(34, 34, 96, .6);
         }
-    }
+    };
 
     .menu-items{
         flex: 1;
@@ -95,8 +100,27 @@ const NavStyled = styled.nav`
                 transition: all .4s ease-in-out;
             }
         }
-    }
+    };
+
+    .active{
+        color: rgba(34, 34, 96, 1);
+
+        i{
+            color: rgba(34, 34, 96, 1);
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #222260;
+            border-radius: 0 10px 10px 0;
+        }
+    };
 
 `;
 
-export default Navigation
+export default Navigation;
