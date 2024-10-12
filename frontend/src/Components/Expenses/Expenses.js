@@ -4,7 +4,7 @@ import styled from 'styled-components'
 function Expenses() {
   return (
     <ExpensesStyled>
-      
+      Expenses
     </ExpensesStyled>
   )
 }

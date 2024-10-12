@@ -5,6 +5,7 @@ import Orb from "./Components/Orb/Orb";
 import Navigation from "./Components/Navigation/Navigation";
 import React, { useState } from "react";
 import { useMemo } from "react";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   const [active, setActive] = useState(1)
