@@ -30,7 +30,9 @@ export const GlobalProvider = ({children}) => {
 
     return (
         <GlobalContext.Provider value={{
-            addIncome
+            addIncome,
+            getIncomes,
+            incomes
         }}>
             {children}
         </GlobalContext.Provider>
