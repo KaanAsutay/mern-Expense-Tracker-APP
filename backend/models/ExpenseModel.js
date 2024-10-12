@@ -23,7 +23,7 @@ const ExpenseSchema = new mongoose.Schema({
 
     type: {
         type: String,
-        default: "income"
+        default: "expense"
     },
 
     date: {

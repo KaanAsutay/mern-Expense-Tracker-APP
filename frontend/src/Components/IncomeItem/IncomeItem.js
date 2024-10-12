@@ -15,32 +15,24 @@ function IncomeItem({
     type
 }) {
 
-    const categoryIcon = () => {
+    const categoryIcon = () =>{
         switch(category) {
             case 'salary':
                 return money;
-
             case 'freelancing':
-                return freelance;
-
-            case 'investimens':
+                return freelance
+            case 'investments':
                 return stocks;
-
             case 'stocks':
                 return users;
-
             case 'bitcoin':
                 return bitcoin;
-
             case 'bank':
                 return card;
-
             case 'youtube':
                 return yt;
-
             case 'other':
-                return piggy
-
+                return piggy;
             default:
                 return ''
         }
@@ -72,7 +64,7 @@ function IncomeItem({
   return (
     <IncomeItemStyled indicator={indicatorColor}>
       <div className='icon'>
-
+        {type === 'expense' ? expenseCatIcon() : categoryIcon()}
       </div>
 
       <div className='content'>
