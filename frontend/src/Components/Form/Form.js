@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 function Form() {
     const [inputState, setInputState] = useState({
@@ -21,21 +23,33 @@ function Form() {
 
       <div className='input-control'>
         <input 
-        type='text' 
-        value={title}
-        name={'title'}
-        placeholder='Salary Title'
-        onChange={handleInput('title')}
+            type='text' 
+            value={title}
+            name={'title'}
+            placeholder='Salary Title'
+            onChange={handleInput('title')}
         />
       </div>
 
       <div className='input-control'>
         <input 
-        type='text' 
-        value={amount}
-        name={'amount'}
-        placeholder='Salary Amount'
-        onChange={handleInput('amount')}
+            type='text' 
+            value={amount}
+            name={'amount'}
+            placeholder='Salary Amount'
+            onChange={handleInput('amount')}
+        />
+      </div>
+
+      <div className='input-control'>
+        <DatePicker 
+            id='date'
+            placeholderText='Enter a Date'
+            selected={date}
+            dateFormat='dd/mm/yyyy'
+            onChange={(date) => {
+                setInputState({...inputState, date: date})
+            }}
         />
       </div>
 
