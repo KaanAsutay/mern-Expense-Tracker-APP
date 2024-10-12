@@ -103,10 +103,10 @@ const NavStyled = styled.nav`
     };
 
     .active{
-        color: rgba(34, 34, 96, 1);
+        color: rgba(34, 34, 96, 1) !important;
 
         i{
-            color: rgba(34, 34, 96, 1);
+            color: rgba(34, 34, 96, 1) !important;
         }
 
         &::before{

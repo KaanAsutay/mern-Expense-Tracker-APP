@@ -6,6 +6,8 @@ import Navigation from "./Components/Navigation/Navigation";
 import React, { useState } from "react";
 import { useMemo } from "react";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import Income from "./Components/Income/Income";
+import Expenses from "./Components/Expenses/Expenses";
 
 function App() {
   const [active, setActive] = useState(1)
@@ -14,6 +16,18 @@ function App() {
     switch(active){
       case 1:
         return <Dashboard />
+
+      case 2:
+         return <Dashboard />
+
+        case 3:
+         return <Income />
+
+        case 4:
+          return <Expenses />
+
+        default: 
+          return <Dashboard /> 
     }
   }
 

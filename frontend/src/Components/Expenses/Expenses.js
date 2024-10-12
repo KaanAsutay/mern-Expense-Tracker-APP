@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { InnertLayout } from '../../styles/Layout';
 
 function Expenses() {
   return (
     <ExpensesStyled>
-      Expenses
+      <InnertLayout>
+        
+        </InnertLayout>
     </ExpensesStyled>
   )
 }
