@@ -13,7 +13,7 @@ const app = express()
 // envVariables to process.env:
 require('dotenv').config()
 const HOST = process.env?.HOST || '127.0.0.1'
-const PORT = process.env?.PORT || 8000
+const PORT = process.env?.PORT || 5000
 
 
 /* ------------------------------------------------------- */
@@ -28,8 +28,6 @@ db()
 app.use(express.json())
 app.use(cors())
 /* ------------------------------------------------------- */
-
-
 
 
 /* ------------------------------------------------------- */

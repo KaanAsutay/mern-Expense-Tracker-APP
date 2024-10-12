@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { useGlobalContext } from '../../context/globalContext';
 
 function Form() {
+    const {addIncome} = useGlobalContext()
+
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -18,8 +21,20 @@ function Form() {
         setInputState({...inputState, [name]: e.target.value})
     }
 
+    const handleSubmit = e => {
+        e.preventDefault()
+        addIncome(inputState)
+        setInputState({
+            title: '',
+            amount: '',
+            date: '',
+            category: '',
+            description: '',
+        })
+    }
+
   return (
-    <FormStyled>
+    <FormStyled onSubmit={handleSubmit}>
 
       <div className='input-control'>
         <input 
@@ -65,6 +80,23 @@ function Form() {
                     <option value="youtube">Youtube</option>  
                     <option value="other">Other</option>  
                 </select>
+        </div>
+
+        <div className="input-control">
+                <textarea 
+                    name="description" 
+                    value={description} 
+                    placeholder='Add A Reference' 
+                    id="description" 
+                    cols="30" 
+                    rows="4" 
+                    onChange={handleInput('description')}
+                    >
+                </textarea>
+            </div>
+
+        <div className='submit-btn'>
+            <button>Add Income</button>
         </div>
 
     </FormStyled>
