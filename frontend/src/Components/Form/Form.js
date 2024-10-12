@@ -28,7 +28,17 @@ function Form() {
         onChange={handleInput('title')}
         />
       </div>
-      
+
+      <div className='input-control'>
+        <input 
+        type='text' 
+        value={amount}
+        name={'amount'}
+        placeholder='Salary Amount'
+        onChange={handleInput('amount')}
+        />
+      </div>
+
     </FormStyled>
   )
 }
