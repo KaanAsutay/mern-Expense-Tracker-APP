@@ -9,6 +9,13 @@ import { useMemo } from "react";
 function App() {
   const [active, setActive] = useState(1)
 
+  const displayData = () => {
+    switch(active){
+      case 1:
+        return <Dashboard />
+    }
+  }
+
   const orbMemo = useMemo(() => {
     return <Orb />
   }, [])
@@ -19,7 +26,7 @@ function App() {
       <MainLayout>
         <Navigation active={active} setActive={setActive} />
         <main>
-          
+          {displayData()}
         </main>
       </MainLayout>
     </AppStyled>
