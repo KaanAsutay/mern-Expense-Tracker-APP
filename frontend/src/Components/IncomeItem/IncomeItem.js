@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { calender, comment, dollar, trash } from '../../utils/Icons';
+import { bitcoin, book, calender, card, circle, clothing, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt } from '../../utils/Icons';
 import Button from '../Button/Button';
 
 function IncomeItem({
@@ -14,8 +14,63 @@ function IncomeItem({
     indicatorColor,
     type
 }) {
+
+    const categoryIcon = () => {
+        switch(category) {
+            case 'salary':
+                return money;
+
+            case 'freelancing':
+                return freelance;
+
+            case 'investimens':
+                return stocks;
+
+            case 'stocks':
+                return users;
+
+            case 'bitcoin':
+                return bitcoin;
+
+            case 'bank':
+                return card;
+
+            case 'youtube':
+                return yt;
+
+            case 'other':
+                return piggy
+
+            default:
+                return ''
+        }
+    }
+
+    const expenseCatIcon = () => {
+        switch (category) {
+            case 'education':
+                return book;
+            case 'groceries':
+                return food;
+            case 'health':
+                return medical;
+            case 'subscriptions':
+                return tv;
+            case 'takeaways':
+                return takeaway;
+            case 'clothing':
+                return clothing;
+            case 'travelling':
+                return freelance;
+            case 'other':
+                return circle;
+            default:
+                return ''
+        }
+    }
+
   return (
-    <IncomeItemStyled>
+    <IncomeItemStyled indicator={indicatorColor}>
       <div className='icon'>
 
       </div>
@@ -83,6 +138,38 @@ const IncomeItemStyled = styled.div`
             font-size: 1.3rem;
             padding-left: 2rem;
             position: relative;
+
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: .8rem;
+                height: .8rem;
+                border-radius: 50%;
+                background: ${props => props.indicator};
+            }
+        }
+
+        .inner-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .text{
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+
+                p{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: var(--primary-color);
+                    opacity: 0.8;
+                }
+            }
         }
     }
 `;
