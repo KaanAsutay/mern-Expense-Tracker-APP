@@ -30,6 +30,7 @@ export const GlobalProvider = ({children}) => {
 
     const deleteIncome = async (id) => {
         const res = await axios.delete(`${BASE_URL}delete-income/${id}`)
+        getIncomes()
     }
 
     return (

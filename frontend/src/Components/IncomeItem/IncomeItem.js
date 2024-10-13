@@ -36,7 +36,7 @@ function IncomeItem({
             default:
                 return ''
         }
-    }
+    };
 
     const expenseCatIcon = () => {
         switch (category) {
@@ -59,7 +59,7 @@ function IncomeItem({
             default:
                 return ''
         }
-    }
+    };
 
   return (
     <IncomeItemStyled indicator={indicatorColor}>
@@ -84,6 +84,7 @@ function IncomeItem({
                     color={'#fff'}
                     iColor={'#fff'}
                     hColor={'var(--color-green)'}
+                    onClick={() => deletItem(id)}
                 />
             </div>
         </div>
