@@ -10,7 +10,7 @@ function IncomeItem({
     date,
     category,
     description,
-    deletItem,
+    deleteItem,
     indicatorColor,
     type
 }) {
@@ -84,7 +84,7 @@ function IncomeItem({
                     color={'#fff'}
                     iColor={'#fff'}
                     hColor={'var(--color-green)'}
-                    onClick={() => deletItem(id)}
+                    onClick={() => deleteItem(id)}
                 />
             </div>
         </div>

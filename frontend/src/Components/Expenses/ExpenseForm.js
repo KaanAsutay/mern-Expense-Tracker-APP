@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 import { plus } from '../../utils/Icons';
 
 function ExpenseForm() {
-    const {addExpense, getIncomes} = useGlobalContext()
+    const {addIncome} = useGlobalContext()
 
     const [inputState, setInputState] = useState({
         title: '',
@@ -112,7 +112,7 @@ function ExpenseForm() {
   )
 }
 
-const ExpenseFormStyled = styled.form`
+const FormStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -165,4 +165,4 @@ const ExpenseFormStyled = styled.form`
     }
 `;
 
-export default Form
+export default ExpenseForm
