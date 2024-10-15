@@ -20,18 +20,18 @@ export const GlobalProvider = ({children}) => {
                 setError(err.response.data.message)
             })
         getIncomes()
-    }
+    };
 
     const getIncomes = async () => {
         const response = await axios.get(`${BASE_URL}get-incomes`)
         setIncomes(response.data)
         console.log(response.data)
-    }
+    };
 
     const deleteIncome = async (id) => {
         const res = await axios.delete(`${BASE_URL}delete-income/${id}`)
         getIncomes()
-    }
+    };
 
     const totalIncome = () => {
         let totalIncome = 0;
@@ -40,7 +40,7 @@ export const GlobalProvider = ({children}) => {
         })
 
         return totalIncome;
-    }
+    };
 
     //calculate expenses
     const addExpense = async (income) => {
@@ -49,18 +49,18 @@ export const GlobalProvider = ({children}) => {
                 setError(err.response.data.message)
             })
         getExpenses()
-    }
+    };
 
     const getExpenses = async () => {
         const response = await axios.get(`${BASE_URL}get-expenses`)
         setExpenses(response.data)
         console.log(response.data)
-    }
+    };
 
     const deleteExpense = async (id) => {
         const res  = await axios.delete(`${BASE_URL}delete-expense/${id}`)
         getExpenses()
-    }
+    };
 
     const totalExpenses = () => {
         let totalIncome = 0;
@@ -69,6 +69,17 @@ export const GlobalProvider = ({children}) => {
         })
 
         return totalIncome;
+    };
+
+    const totalBalance = () => {
+        return totalIncome() - totalExpenses()
+    };
+
+    const transactionHistory = () => {
+        const history = [...incomes, ...expenses]
+        history.sort((a, b) => {
+            return new Date(b.createdAt) - new Date(a.createdAt)
+        })
     }
 
     
@@ -84,7 +95,8 @@ export const GlobalProvider = ({children}) => {
             addExpense,
             getExpenses,
             deleteExpense,
-            totalExpenses
+            totalExpenses,
+            totalBalance
         }}>
             {children}
         </GlobalContext.Provider>
