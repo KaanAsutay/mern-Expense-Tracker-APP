@@ -6,7 +6,12 @@ function Dashboard() {
   return (
     <DashboardStyled>
       <InnertLayout>
-        
+          <h1>All Transaction</h1>
+          <div className='stats-con'>
+            <div className='chart-con'>
+              
+            </div>
+          </div>
       </InnertLayout>
     </DashboardStyled>
   )
