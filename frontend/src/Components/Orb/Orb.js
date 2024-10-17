@@ -15,7 +15,7 @@ function Orb() {
         }
 
         50%{
-            transform: translate(${width/1.2}px, ${height/2}px);
+            transform: translate(${width}px, ${height/2}px);
         }
 
         100%{
