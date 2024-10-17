@@ -36,8 +36,8 @@ function History() {
   )
 }
 
-const HistoryStyled =styled.div `
-
+const HistoryStyled = styled.div `
+        
 `;
 
 export default History

@@ -1,6 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import { bitcoin, book, calender, card, circle, clothing, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt } from '../../utils/Icons';
+import { 
+    bitcoin, 
+    book, 
+    calender, 
+    card, 
+    circle, 
+    clothing, 
+    comment, 
+    dollar, 
+    food, 
+    freelance, 
+    medical, 
+    money, 
+    piggy, 
+    stocks, 
+    takeaway, 
+    trash, 
+    tv, 
+    users, 
+    yt 
+} from '../../utils/Icons';
 import Button from '../Button/Button';
 import { dateFormat } from '../../utils/dateFormat';
 
